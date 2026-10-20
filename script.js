@@ -1,3 +1,19 @@
+const rockButton = document.querySelector("#rock");
+const paperButton = document.querySelector("#paper");
+const scissorsButton = document.querySelector("#scissors");
+
+rockButton.addEventListener("click", () => {
+  playRound("rock", getComputerChoice());
+});
+
+paperButton.addEventListener("click", () => {
+  playRound("paper", getComputerChoice());
+});
+
+scissorsButton.addEventListener("click", () => {
+  playRound("scissors", getComputerChoice());
+});
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -15,6 +31,9 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
   humanChoice = humanChoice.toLowerCase();
   computerChoice = computerChoice.toLowerCase();
+
+  console.log(humanChoice);
+  console.log(computerChoice);
 
   if (humanChoice === "rock" && computerChoice === "scissors") {
     console.log("You win! Rock beats Scissors");
