@@ -70,22 +70,3 @@ function playRound(humanChoice, computerChoice) {
   }
 
 }
-
-/*  function playGame() {
-  for (let i = 0; i < 5; i++) {
-    const humanChoice = getHumanChoice();
-    const computerChoice = getComputerChoice();
-
-    playRound(humanChoice, computerChoice);
-  }
-
-  if (humanScore > computerScore) {
-    console.log("Human Wins!");
-  } else if (computerScore > humanScore) {
-    console.log("Computer Wins!");
-  } else {
-    console.log("Tie!");
-  }
-}
-
-playGame(); */
