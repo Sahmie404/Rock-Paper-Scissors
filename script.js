@@ -1,6 +1,7 @@
 const rockButton = document.querySelector("#rock");
 const paperButton = document.querySelector("#paper");
 const scissorsButton = document.querySelector("#scissors");
+const results = document.querySelector("#result");
 
 rockButton.addEventListener("click", () => {
   playRound("rock", getComputerChoice());
@@ -13,6 +14,7 @@ paperButton.addEventListener("click", () => {
 scissorsButton.addEventListener("click", () => {
   playRound("scissors", getComputerChoice());
 });
+
 
 let humanScore = 0;
 let computerScore = 0;
@@ -32,29 +34,26 @@ function playRound(humanChoice, computerChoice) {
   humanChoice = humanChoice.toLowerCase();
   computerChoice = computerChoice.toLowerCase();
 
-  console.log(humanChoice);
-  console.log(computerChoice);
-
   if (humanChoice === "rock" && computerChoice === "scissors") {
-    console.log("You win! Rock beats Scissors");
+    results.textContent = "You win! Rock beats Scissors";
     humanScore++;
   } else if (computerChoice === "rock" && humanChoice === "scissors") {
-    console.log("You lose! Rock beats Scissors.");
+    results.textContent = "You lose! Rock beats Scissors.";
     computerScore++;
   } else if (humanChoice === "scissors" && computerChoice === "paper") {
-    console.log("You win! Scissors beats Paper");
+    results.textContent = "You win! Scissors beats Paper";
     humanScore++;
   } else if (computerChoice === "scissors" && humanChoice === "paper") {
-    console.log("You lose! Scissors beats Paper.");
+    results.textContent = "You lose! Scissors beats Paper.";
     computerScore++;
   } else if (humanChoice === "paper" && computerChoice === "rock") {
-    console.log("You win! Paper beats Rock.");
+    results.textContent = "You win! Paper beats Rock.";
     humanScore++;
   } else if (computerChoice === "paper" && humanChoice === "rock") {
-    console.log("You lose! Paper beats Rock.");
+    results.textContent = "You lose! Paper beats Rock.";
     computerScore++;
   } else {
-    console.log("Tie!");
+    results.textContent = "Tie!";
   }
 }
 
